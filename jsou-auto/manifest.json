@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "自动答题助手 Pro",
+  "version": "5.0",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://xuexi.jsou.cn/*"],
+      "js": ["questions.js", "content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["*://xuexi.jsou.cn/*"]
+    }
+  ]
+}
